@@ -1,3 +1,33 @@
 {
-    "packages": {}
+    "packages": {
+        "asg017/vss": {
+            "owner": "asg017",
+            "name": "vss",
+            "version": "v0.1.2",
+            "specfile": "https://github.com/nalgeon/sqlpkg/raw/main/pkg/asg017/vss.json",
+            "assets": {
+                "path": "https://github.com/asg017/sqlite-vss/releases/download/v0.1.2",
+                "files": {
+                    "darwin-amd64": "sqlite-vss-v0.1.2-loadable-macos-x86_64.tar.gz",
+                    "darwin-arm64": "sqlite-vss-v0.1.2-loadable-macos-aarch64.tar.gz",
+                    "linux-amd64": "sqlite-vss-v0.1.2-loadable-linux-x86_64.tar.gz"
+                },
+                "checksums": {
+                    "spm.json": "sha256-509e86f147078981a6eb1e73361520c39cb6023a534ef4e5d9aed8393ecd8766",
+                    "sqlite-vss-v0.1.2-deno-darwin-aarch64.vector0.dylib": "sha256-76bba87b33a6d7d38679cdaceea22f0088217e6afffbdd7a55d7c5aa570a1ad9",
+                    "sqlite-vss-v0.1.2-deno-darwin-aarch64.vss0.dylib": "sha256-37cc616e01f1ae6d7e191f880f9d8656d9171f8ad13f2923e1f3050b9aa6c959",
+                    "sqlite-vss-v0.1.2-deno-darwin-x86_64.vector0.dylib": "sha256-c6d714c5fee9b94057cd6cbd2d554c7db08453df355c07bc4b53e7e86a21ebf5",
+                    "sqlite-vss-v0.1.2-deno-darwin-x86_64.vss0.dylib": "sha256-57a8214f63e9bd225fd66f97e707ae407bd566d52b95e18ae1877f6f9132928c",
+                    "sqlite-vss-v0.1.2-deno-linux-x86_64.vector0.so": "sha256-97278fc772ca3f38f1fab3f69351bcd2f29cccf2efd4b1a4f648c34898cda71a",
+                    "sqlite-vss-v0.1.2-deno-linux-x86_64.vss0.so": "sha256-13f1504ecb69c09e558d7482731dff8dbc85e710108eb776de37b3759f0755c0",
+                    "sqlite-vss-v0.1.2-loadable-linux-x86_64.tar.gz": "sha256-757a3ca0346f7497abd2159d7516cee3923dbefdae62f692e2897b99d25ac041",
+                    "sqlite-vss-v0.1.2-loadable-macos-aarch64.tar.gz": "sha256-cc5e5abfbdc20be5d09b8538c0cb4b62508e5b6f29212e79b4a5d0d06d8650dd",
+                    "sqlite-vss-v0.1.2-loadable-macos-x86_64.tar.gz": "sha256-d13b9c89d8c60da857983173b889e6cb3bbb39e8b020f30a2025142fade6a0e0",
+                    "sqlite-vss-v0.1.2-static-linux-x86_64.tar.gz": "sha256-1d7af60da8e193d5bf1648fa879ccaf927c9eb0051da5613243b29e041de4b43",
+                    "sqlite-vss-v0.1.2-static-macos-aarch64.tar.gz": "sha256-f01c7ef126e39206f1803a2b4d9e415db2c54c9ace887337f9cd8ae76248069b",
+                    "sqlite-vss-v0.1.2-static-macos-x86_64.tar.gz": "sha256-c9d3aa05aa503bf2910b408a0370632fdc1bd3c43ac144aeb9ae88c85efc03d8"
+                }
+            }
+        }
+    }
 }
