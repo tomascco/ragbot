@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_26_233250) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_26_234042) do
   create_table "content_fragments", force: :cascade do |t|
     t.string "body"
     t.json "metadata"
     t.integer "content_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "aasm_state"
     t.index ["content_id"], name: "index_content_fragments_on_content_id"
   end
 
