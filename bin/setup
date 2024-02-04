@@ -13,9 +13,25 @@ FileUtils.chdir APP_ROOT do
   # This script is idempotent, so that you can run it at any time and get an expectable outcome.
   # Add necessary setup steps to this file.
 
+  puts "== Installing system packages =="
+  system "apt update"
+  system! "apt install -y libgomp1 libatlas-base-dev liblapack-dev"
+
   puts "== Installing dependencies =="
   system! "gem install bundler --conservative"
   system("bundle check") || system!("bundle install")
+
+  puts "==Installing jupyter notebook =="
+  system! "pip install notebook"
+  system! "gem install iruby"
+  system! "iruby register --force"
+
+  puts "== Install gems =="
+  system! "gem install mailcatcher"
+  system! "gem install ruby-lsp"
+
+  puts "== Installing sqlite extensions =="
+  system! "bundle exec sqlpkg install"
 
   # puts "\n== Copying sample files =="
   # unless File.exist?("config/database.yml")

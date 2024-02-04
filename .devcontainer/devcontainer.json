@@ -3,15 +3,14 @@
 {
 	"name": "Ruby",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "registry.docker.com/library/ruby:3.3.0",
+	"image": "registry.docker.com/library/debian:bookworm-slim",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": true,
 			"configureZshAsDefaultShell": true,
 			"installOhMyZsh": true,
 			"installOhMyZshConfig": true,
-			"upgradePackages": true,
-			"username": "root",
+			"username": "automatic",
 			"userUid": "automatic",
 			"userGid": "automatic"
 		},
@@ -23,16 +22,23 @@
 			"plugins": "git bundler",
 			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
 			"username": "root"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.12"
+		},
+		"ghcr.io/devcontainers/features/ruby:1": {
+			"version": "3.3"
 		}
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"GitHub.copilot",
-				"Shopify.ruby-extensions-pack"
+				"Shopify.ruby-extensions-pack",
+				"ms-toolsai.jupyter"
 			]
 		}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -41,7 +47,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "ruby --version",
+	"postCreateCommand": "bin/setup"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
