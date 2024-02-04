@@ -64,7 +64,7 @@ FOREIGN KEY ("job_id")
 CREATE UNIQUE INDEX "index_solid_queue_scheduled_executions_on_job_id" ON "solid_queue_scheduled_executions" ("job_id");
 CREATE INDEX "index_solid_queue_dispatch_all" ON "solid_queue_scheduled_executions" ("scheduled_at", "priority", "job_id");
 CREATE VIRTUAL TABLE vss_content_fragments using vss0(
-  embedding(4096)
+  embedding(1536)
 );
 CREATE TABLE IF NOT EXISTS "vss_content_fragments_index"(rowid integer primary key autoincrement, idx);
 CREATE TABLE IF NOT EXISTS "vss_content_fragments_data"(rowid integer primary key autoincrement, _);
