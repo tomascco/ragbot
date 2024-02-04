@@ -37,3 +37,6 @@
 # Ignore sqlite extensions.
 /.sqlpkg/*
 !/.sqlpkg/.keep
+
+# Ignore raw json files in notebooks folder
+/notebooks/*.json
