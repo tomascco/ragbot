@@ -28,7 +28,8 @@
 		},
 		"ghcr.io/devcontainers/features/ruby:1": {
 			"version": "3.3"
-		}
+		},
+		"ghcr.io/dhoeric/features/flyctl:1": {}
 	},
 	"customizations": {
 		"vscode": {

@@ -11,9 +11,9 @@ module AskQuestion
     end.join("\n")
 
     prompt = <<~PROMPT
-      Answer the question based only on the information. Cite the author whose information you are using.
-      The citation should be inline in the format "Author (id)". If the information comes from multiple ids
-      you must still cite them all, even if it is the same author.
+      Answer the question based only on the information. Mention the author whose information you are using.
+      The mention should be inline in the format "Author (id)". If the information comes from multiple ids
+      you must still mention them all, even if it is the same author.
 
       #{formatted_content}
 
