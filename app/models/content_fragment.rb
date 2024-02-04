@@ -2,6 +2,11 @@ class ContentFragment < ApplicationRecord
   include AASM
 
   belongs_to :content
+  has_one :index,
+    class_name: "ContentFragmentIndex",
+    primary_key: "id",
+    foreign_key: "rowid",
+    dependent: :destroy
 
   aasm do
     state :enqueued, initial: true
