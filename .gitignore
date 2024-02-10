@@ -40,3 +40,6 @@
 
 # Ignore raw json files in notebooks folder
 /notebooks/*.json
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
