@@ -57,10 +57,11 @@ gem "bcdd-result"
 
 gem "ruby-openai"
 
+gem "sqlpkg", require: false
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
-  gem "sqlpkg"
   gem "dotenv-rails"
 end
 
