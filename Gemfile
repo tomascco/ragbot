@@ -23,8 +23,11 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+# Use Tailwind CSS for stylesheets [https://tailwindcss.com]
+gem "tailwindcss-rails"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+# gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -50,7 +53,7 @@ gem "aasm"
 # Monad-like Result object for railway oriented programming
 gem "bcdd-result"
 
-gem "solid_queue"
+# gem "solid_queue"
 
 gem "ruby-openai"
 
