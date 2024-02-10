@@ -29,7 +29,7 @@ module AskQuestion
     OPENAI_CLIENT.chat(parameters: {
       model: "accounts/fireworks/models/mixtral-8x7b-instruct",
       messages: [{ role: "system", content: prompt }, { role: "user", content: query}],
-      temperature: 0.5,
+      temperature: 0,
       max_tokens: 1000,
       stream:
     })
