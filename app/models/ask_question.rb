@@ -1,29 +1,39 @@
 module AskQuestion
-  OPENAI_CLIENT = OpenAI::Client.new(access_token: ENV.fetch("OPENAI_API_KEY"))
+  OPENAI_CLIENT = OpenAI::Client.new(
+    uri_base: "https://api.fireworks.ai/inference",
+    access_token: ENV.fetch("FIREWORKS_API_KEY")
+  )
 
   def self.call(query)
     embeddings = FetchTextEmbeddings.call(query)
 
-    retrieved_content = Content.last.semantic_search(embeddings, limit: 10)
+    retrieved_content = Content.last.semantic_search(embeddings, limit: 5)
 
     formatted_content = retrieved_content.map do
-      "ID: #{_1.metadata["id"]}, Author: #{_1.metadata["author"]}, Information #{_1.body}"
+      "ID: #{_1.metadata["id"]}, Autor: #{_1.metadata["author"]}, Informação: #{_1.body}"
     end.join("\n")
 
+    puts formatted_content
+
     prompt = <<~PROMPT
-      Answer the question based only on the information. Mention the author whose information you are using.
-      The mention should be inline in the format "Author (id)". If the information comes from multiple ids
-      you must still mention them all, even if it is the same author.
+      [INST]
+      Sua tarefa é responder a pergunta abaixo somente com base no conteúdo fornecido.
+      Por favor, forneça uma resposta clara e concisa. Cite suas fontes a seguinte formatação: (Autor, ID).
+      Use somente o conteúdo relevante para responder a pergunta.
+      Coloque as referências somente durante o texto da resposta.
 
       #{formatted_content}
 
-      Question:
+      Pergunta:
+
+      [/INST]
     PROMPT
 
     OPENAI_CLIENT.chat(parameters: {
-      model: "gpt-4",
+      model: "accounts/fireworks/models/mixtral-8x7b-instruct",
       messages: [{ role: "system", content: prompt }, { role: "user", content: query}],
-      temperature: 0
+      temperature: 0,
+      max_tokens: 1000
     }).dig("choices", 0, "message", "content")
   end
 end
