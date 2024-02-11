@@ -73,6 +73,7 @@ RUN groupadd --system --gid 1000 rails && \
 
 # Deployment options
 ENV DATABASE_URL="sqlite3:///data/production.sqlite3"
+ENV RUBYOPT="--enable=frozen-string-literal"
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
