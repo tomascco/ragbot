@@ -45,4 +45,4 @@ console_command = '/rails/bin/rails console'
   guest_path = '/rails/public'
   url_prefix = '/'
 
-swap_size_mb = 1024
+swap_size_mb = 512
